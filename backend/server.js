@@ -8,7 +8,7 @@ app.use(express.json())
 const cors = require("cors");
 
 app.use(cors({
-    origin: "http://localhost:5173", // Allow requests from this origin
+    origin: "https://fullstack-todo-list-app.vercel.app/", // Allow requests from this origin
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     credentials: true 
 }));
