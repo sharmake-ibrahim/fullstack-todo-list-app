@@ -10,10 +10,10 @@ function App() {
     if(input_value !== ""){
       setNewTask(input_value);
       createTask(newTask);
-      obtainData();
-
       setInput_vale("")
     }
+
+  
    
 
   }
@@ -47,6 +47,7 @@ function App() {
               }),
             })
             const data = await res.json();
+            obtainData();
             console.log("the new task is here", data);
         }
 

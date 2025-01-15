@@ -7,19 +7,13 @@ app.use(express.json())
 
 const cors = require("cors");
 
-app.use(cors({
-    origin: "https://fullstack-todo-list-app.vercel.app", // Allow requests from this origin
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    credentials: true 
-}));
+app.use(cors());
+
+require("dotenv").config();
+
+const dbUser = process.env.DB_USER;
 
 
-
-/* sharmakeahmedibrahim */
-/* wSoAb886oSjTcz2D */
-
-
-// mongodb+srv://sharmakeahmedibrahim:wSoAb886oSjTcz2D@mybackend.9swak.mongodb.net/?retryWrites=true&w=majority&appName=mybackend
 
 app.get("/",  (req, res)=> {
     res.send("fullstack Todo App");
@@ -98,7 +92,7 @@ app.delete("/tasks/:id", async (req, res)=> {
 
 
 
-mongoose.connect('mongodb+srv://sharmakeahmedibrahim:wSoAb886oSjTcz2D@mybackend.9swak.mongodb.net/?retryWrites=true&w=majority&appName=mybackend')
+mongoose.connect(dbUser)
 
 .then(() => {
     console.log('Connected!')
