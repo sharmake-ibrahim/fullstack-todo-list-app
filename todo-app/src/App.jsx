@@ -10,7 +10,8 @@ function App() {
     if(input_value !== ""){
       setNewTask(input_value);
       createTask(newTask);
-      setInput_vale("")
+      setInput_vale("");
+      obtainData();
     }
 
   
