@@ -8,7 +8,7 @@ app.use(express.json())
 const cors = require("cors");
 
 app.use(cors({
-    origin: "*", 
+    origin: "https://fullstack-todo-list-app.vercel.app", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true 
 }));
